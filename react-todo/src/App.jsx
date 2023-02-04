@@ -1,4 +1,3 @@
-import './App.css';
 import { useState } from 'react';
 
 function App() {
@@ -30,20 +29,24 @@ function App() {
   }
   return (
     <div className='App'>
-        <input onChange={e => setInput(e.target.value)} value={input} placeholder='Add todo' />
-        <button onClick={() => addTodo()}>Submit</button>
-        <hr />
-        <ul>
-          {todos.map(todo => {
-            return (
-              <li key={todo.id} style={{textDecoration: todo.status ? 'line-through' : ''}}>
-                {todo.value}
-                <button onClick={() => deleteTodo(todo.id)}>❌</button>
-                <button onClick={() => doneTodo(todo.id)}>✔️</button>
+      <div className="card bg-light p-5 border-success position-absolute top-50 start-50 translate-middle">
+      <input type='text' onChange={e => setInput(e.target.value)} value={input} placeholder='Add todo' className='form-control mb-2 border-success'/>
+      <button onClick={() => addTodo()} className='btn btn-success'>Submit</button>
+      <hr />
+      <ul>
+        {todos.map(todo => {
+          return (
+              <li key={todo.id} style={{textDecoration: todo.status ? 'line-through' : ''}} className='list-unstyled mb-4'>
+                <p>
+                  {todo.value}
+                  <button className='btn btn-primary float-end' onClick={() => doneTodo(todo.id)}>Done</button>
+                  <button className='btn btn-danger me-1 float-end' onClick={() => deleteTodo(todo.id)}>Delete</button>
+                </p>
               </li>
-            )
-          })}
-        </ul>
+          )
+        })}
+      </ul>
+      </div>
     </div>
   )
 }

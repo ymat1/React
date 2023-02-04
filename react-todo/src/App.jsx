@@ -29,23 +29,19 @@ function App() {
   }
   return (
     <div className='App'>
-      <div className="card bg-light p-5 border-success position-absolute top-50 start-50 translate-middle">
-        <input type='text' onChange={e => setInput(e.target.value)} value={input} placeholder='Add todo' className='form-control mb-2 border-success'/>
-        <button onClick={() => addTodo()} className='btn btn-success'>Submit</button>
+      <div className="card bg-light p-5 pb-4 border-success position-absolute top-50 start-50 translate-middle">
+        <input type='text' onChange={e => setInput(e.target.value)} value={input} placeholder='My To Do List' className='form-control mb-2 border-success'/>
+        <button onClick={() => addTodo()} className='btn btn-success'>Add</button>
         <hr />
-        <ul>
           {todos.map(todo => {
             return (
-              <li key={todo.id} style={{textDecoration: todo.status ? 'line-through' : ''}} className='list-unstyled mb-4'>
-                <p className='d-flex align-items-center justify-content-end'>
-                  {todo.value}
-                  <button className='btn btn-danger ms-2' onClick={() => deleteTodo(todo.id)}>Delete</button>
-                  <button className='btn btn-primary ms-2' onClick={() => doneTodo(todo.id)}>Done</button>
-                </p>
-              </li>
+              <div key={todo.id} style={{textDecoration: todo.status ? 'line-through' : ''}} className='d-flex align-items-center pb-2'>
+                  <div className='col'>{todo.value}</div>
+                  <div><button className='btn btn-danger ms-2 col' onClick={() => deleteTodo(todo.id)}>Delete</button></div>
+                  <div><button className='btn btn-primary ms-2 col' onClick={() => doneTodo(todo.id)}>Done</button></div>
+              </div>
             )
           })}
-        </ul>
       </div>
     </div>
   )

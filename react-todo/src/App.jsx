@@ -12,8 +12,18 @@ function App() {
       value: input,
       status: false
     }
+    const addTodoValue = item.value.trim()
+    const todoValidator = /([a-zA-Z\-]+){3,}/
+    if(!addTodoValue) {
+      alert('Input is required')
+    }
+    else if(!todoValidator.test(addTodoValue)) {
+      alert('Input must contain at least a three letter word')
+    }
+    else {
     setTodos(oldTodos => [...oldTodos, item]);
     setInput('');
+    }
   }
   // handle delete todo
   function deleteTodo(id) {

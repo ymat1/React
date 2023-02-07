@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #c0e3ff;
+  /* disable text highlighting */
+  -moz-user-select:none; /* firefox */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE */
+  user-select: none; /* Standard syntax */
+}
+
+.card {
+  width: 260px;
+  background-color: #ee635c;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+}
+
+/* placeholder */
+input:focus {
+  outline: none;
+}
+::-webkit-input-placeholder {
+  color: #ee635c;
+  font-weight: 500;
+}
+:-ms-input-placeholder {
+  color: #ee635c;
+}
+::placeholder {
+  color: #ee635c;
+  font-weight: 500;
+}
+
+.rounded-start-2 {
+  size: 18px;
+  padding: 0 0 0 7px;
+  border: none;
+  background-color: #f8d0cd;
+  color: #ee635c;
+}
+.rounded-end-2 {
+  border: none;
+  font-weight: 800;
+  background-color: #f8d0cd;
+  color: #ee635c;
+}
+
+.btn-custom {
+  font-weight: 800;
+  background-color: #f8d0cd;
+  color: #ee635c;
+}
+.btn:hover {
+  color: #ee635c;
+  background-color: #f1b4b0;
+}
+.cart-list:hover {
+  cursor: pointer;
+}
+.increment-decrement,
+.incdec-output {
+  color: #ee635c;
+}
+.increment-decrement:hover {
+  cursor: pointer;
+}

@@ -67,7 +67,7 @@ function App() {
       <div className="position-absolute top-0 start-50 translate-middle-x">
         <div className="card border-0 p-3">
           <div className="input-group pb-3">
-            <input type="text" className="rounded-start-2" placeholder="Add an item..." onChange={e => setInput(e.target.value)} value={input} />
+            <input type="text" className="input-custom rounded-start-2 ps-2" placeholder="Add an item..." onChange={e => setInput(e.target.value)} value={input} />
             <button className="btn btn-custom" onClick={() => addItem()}>+</button>
           </div>
           {cartLists.map((cartList, i) => (
@@ -77,7 +77,7 @@ function App() {
                   <div className="cart-list" onClick={handleClick}>
                     {cartList.value}
                   </div>
-                  <div className='border-white bg-white rounded-pill'>
+                  <div className='border-white bg-white rounded-pill me-1'>
                     <i className="bi bi-chevron-left increment-decrement" onClick={() => handleDecrement(i)}></i>
                     <span className="incdec-output px-1">{cartList.quantity}</span>
                     <i className="bi bi-chevron-right increment-decrement" onClick={() => handleIncrement(i)}></i>
@@ -87,7 +87,7 @@ function App() {
               </>
             )
           ))}
-          <div className="ms-auto text-white pt-1 pe-2">Total: {totalQuantity}</div>
+          <div className="float-end text-white pt-1 pe-2">Total: {totalQuantity}</div>
         </div>
       </div>
     </div>
